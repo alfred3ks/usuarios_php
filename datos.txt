@@ -1,0 +1,18 @@
+Configuracion de la base de datos:
+
+- Vamos a MySQL y creamos una base de datos:
+    usuarios_db
+
+Luego vamos y por la sentencia sql agregamos una tabla:
+
+DROP TABLE IF EXISTS usuarios;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    nombre varchar(50) NOT NULL,
+    apellido varchar(50) NOT NULL,
+    direccion varchar(100) NOT NULL,
+    telefono varchar(20) NOT NULL,
+    correo varchar(200) NOT NULL,
+    password varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
