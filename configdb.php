@@ -12,7 +12,7 @@
     $db = mysqli_select_db($conexion, $database);
 
     if($db){
-        echo 'Conexion ok a BD.';
+        // echo 'Conexion ok a BD.';
     } else {
         echo 'No hay conexion con BD.';
     }
