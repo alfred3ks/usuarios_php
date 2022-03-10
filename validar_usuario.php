@@ -21,13 +21,16 @@ echo $password;
 
         if(($num_row == 1) && ($buscar_password['password']))
         {
+
+            session_start();
+            $_SESSION['usuario'] = $_POST['email'];
             header('Location: usuario.php');
 
         }else {
             header('Location: login.php');
         }
     } else {
-                header('Location: login.php');
-            }
+        header('Location: login.php');
+        }
 
 ?>

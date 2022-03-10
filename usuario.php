@@ -1,10 +1,16 @@
 <?php
-    require 'configdb.php';
-    error_reporting(0);
+require 'configdb.php';
+error_reporting(0);
+
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    header('Location: login.php');
+}
 
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,9 +21,10 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Usuario</title>
 </head>
+
 <body>
-    <?php require 'partials/header_user.php';?>
-    <h1>Bienvenido a tu area de Usuario:</h1>
+    <?php require 'partials/header_user.php'; ?>
+    <h1>Bienvenido</h1>
     <?php
     $sesion = $_SESSION["usuario"];
     // $consulta = "SELECT * FROM usuarios WHERE correo='luis@luis.com'";
@@ -27,7 +34,7 @@
     ?>
     <div class="container">
         <div class="saludo">
-            <h2>Hola <?php echo $fila[1] ;?></h2>
+            <h2>Hola <?php echo $fila[1]; ?></h2>
             <h3>Tus datos de contacto son:</h3>
         </div>
         <div class="datos">
@@ -38,8 +45,9 @@
             <h3> Correo de contacto: <?php echo $fila[5] ?></h3>
         </div>
     </div>
-    <form action="login.php">
+    <form class="btn" action="cerrar_sesion.php">
         <input type="submit" value="Cerrar sesión">
     </form>
 </body>
+
 </html>

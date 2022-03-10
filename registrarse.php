@@ -28,7 +28,8 @@
 
         $ejecutar = mysqli_query($conexion, $insert);
         if($ejecutar){
-            $message =  "<h2>Usuario creado.</h2>";
+            // $message =  "<h2>Usuario creado.</h2>";
+            header('Location: login.php');
             // echo var_dump($ejecutar);
         } else {
             $message = "<h2>Error de conexion con la BD, vuelve a intentarlo mas tarde</h2>";
